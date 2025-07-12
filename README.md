@@ -1,61 +1,237 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Pustaka Adiwiyata
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem perpustakaan digital dengan tema lingkungan Adiwiyata yang mengintegrasikan manajemen buku, peminjaman, dan gamification literasi untuk mendukung pendidikan lingkungan berkelanjutan.
 
-## About Laravel
+## 🎯 Tema & Studi Kasus
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Sistem Perpustakaan Adiwiyata** - Aplikasi perpustakaan digital yang dirancang khusus untuk mendukung program Adiwiyata di sekolah dengan fokus pada literasi lingkungan dan gamification sistem poin literasi.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Fitur Khusus Adiwiyata:
+- 📖 **Katalog Buku Lingkungan**: Kategori khusus buku bertema lingkungan
+- 🌱 **Gamification Literasi**: Sistem poin untuk aktivitas literasi
+- 📊 **Dashboard Lingkungan**: Statistik peminjaman buku bertema lingkungan
+- 🏆 **Leaderboard Anggota**: Ranking berdasarkan poin literasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Fitur Utama
 
-## Learning Laravel
+### 👥 **Frontend (Akses Terbuka)**
+- 🏠 **Beranda**: Informasi perpustakaan dan buku terbaru
+- 📚 **Katalog Buku**: Pencarian dan filter buku
+- 📖 **Detail Buku**: Informasi lengkap dan ulasan
+- ℹ️ **Tentang Kami**: Informasi perpustakaan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🔐 **Member Area (Login Required)**
+- 👤 **Profile Anggota**: Informasi pribadi dan statistik literasi
+- 📚 **Peminjaman Buku**: Request peminjaman dan reservasi
+- ⭐ **Sistem Poin**: Tracking aktivitas literasi
+- 📝 **Ulasan Buku**: Memberikan rating dan komentar
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 👨‍💼 **Admin Panel (Role-based Access)**
+- 📊 **Dashboard Admin**: Statistik dan laporan lengkap
+- 📚 **Manajemen Buku**: CRUD buku dengan kategori Adiwiyata
+- 👥 **Manajemen Anggota**: Kelola data anggota
+- 📋 **Peminjaman**: Approve, return, dan cancel peminjaman
+- 📅 **Reservasi**: Kelola reservasi buku
+- 🏷️ **Kategori**: Manajemen kategori buku
+- ⭐ **Poin Literasi**: Tambah poin manual dan tracking
+- 📈 **Laporan**: Statistik dan analisis
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Teknologi yang Digunakan
 
-## Laravel Sponsors
+### **Backend**
+- **Framework**: Laravel 10.x
+- **Database**: MySQL
+- **Authentication**: Laravel Auth dengan Gates & Policies
+- **Testing**: PHPUnit
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### **Frontend**
+- **CSS Framework**: Bootstrap 5.3.2
+- **Icons**: Bootstrap Icons
+- **Build Tool**: Vite
+- **JavaScript**: Vanilla JS
 
-### Premium Partners
+### **Development Tools**
+- **Package Manager**: Composer & npm
+- **Version Control**: Git
+- **IDE**: Laravel-friendly editors
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📊 Struktur Database
 
-## Contributing
+### **Tabel Utama (Prefix: faris_)**
+| Tabel | Deskripsi | Relasi |
+|-------|-----------|---------|
+| `faris_categories` | Kategori buku | - |
+| `faris_books` | Data buku | ↔ categories |
+| `faris_members` | Data anggota | ↔ users |
+| `faris_borrowings` | Peminjaman | ↔ books, members |
+| `faris_reservations` | Reservasi | ↔ books, members |
+| `faris_literacy_points` | Poin literasi | ↔ members |
+| `faris_reviews` | Ulasan buku | ↔ books, members |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### **Relasi Foreign Key**
+- `faris_books.category_id` → `faris_categories.id`
+- `faris_borrowings.book_id` → `faris_books.id`
+- `faris_borrowings.member_id` → `faris_members.id`
+- `faris_reservations.book_id` → `faris_books.id`
+- `faris_reservations.member_id` → `faris_members.id`
+- `faris_literacy_points.member_id` → `faris_members.id`
+- `faris_reviews.book_id` → `faris_books.id`
+- `faris_reviews.member_id` → `faris_members.id`
 
-## Code of Conduct
+## 🔐 Sistem Keamanan & Authorization
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### **Middleware Implementation**
+```php
+// Authentication Middleware
+Route::middleware('auth')->group(function () {
+    // Member routes
+});
 
-## Security Vulnerabilities
+// Authorization Middleware
+Route::middleware('can:admin')->group(function () {
+    // Admin routes
+});
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### **Gates & Policies**
+- **`admin` Gate**: Akses ke halaman admin
+- **`borrow-book` Gate**: Izin meminjam buku
+- **Role-based Access**: Member vs Admin
 
-## License
+## 📦 Instalasi & Setup
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### **Prerequisites**
+- PHP >= 8.1
+- Composer
+- MySQL
+- Node.js & npm
+
+### **Step-by-Step Installation**
+
+1. **Clone Repository**
+   ```bash
+   git clone <repository-url>
+   cd pustaka-adiwiyata
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Database Configuration**
+   ```bash
+   # Edit .env file
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=pustaka_adiwiyata
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+5. **Run Migrations & Seeders**
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
+
+6. **Build Assets**
+   ```bash
+   npm run build
+   ```
+
+7. **Start Development Server**
+   ```bash
+   php artisan serve
+   ```
+
+### **Default Admin Account**
+- **Email**: `admin@example.com`
+- **Password**: `password`
+
+## 🎮 Gamification System
+
+### **Sistem Poin Literasi**
+- **Peminjaman Buku**: +5 poin
+- **Peminjaman Buku Adiwiyata**: +10 poin
+- **Ulasan Buku**: +3 poin
+- **Kegiatan Lingkungan**: +15 poin
+- **Workshop Adiwiyata**: +20 poin
+
+### **Level System**
+- **Bronze**: 0-50 poin
+- **Silver**: 51-100 poin
+- **Gold**: 101-200 poin
+- **Platinum**: 201+ poin
+
+## 📱 Fitur Responsive
+
+- **Mobile-First Design**: Bootstrap responsive grid
+- **Cross-Browser Compatible**: Modern browser support
+- **Progressive Web App**: PWA-ready features
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+php artisan test
+
+# Run specific test
+php artisan test --filter=BookTest
+```
+
+## 📈 Performance Optimization
+
+- **Database Indexing**: Optimized queries
+- **Lazy Loading**: Efficient relationship loading
+- **Caching**: Route and view caching
+- **Asset Optimization**: Minified CSS/JS
+
+## 🔧 Maintenance
+
+### **Regular Tasks**
+```bash
+# Clear cache
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Update dependencies
+composer update
+npm update
+```
+
+### **Database Backup**
+```bash
+php artisan backup:run
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+Untuk pertanyaan atau dukungan teknis, silakan hubungi:
+- **Email**: support@pustaka-adiwiyata.com
+- **Documentation**: [Wiki](https://github.com/username/pustaka-adiwiyata/wiki)
+
+---
+
+**Pustaka Adiwiyata** - Membangun Literasi Lingkungan untuk Masa Depan Berkelanjutan 🌱📚
